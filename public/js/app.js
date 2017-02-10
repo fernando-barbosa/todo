@@ -5,10 +5,10 @@ angular.module('todo', ['ngRoute'])
 		controller: 'ListController'
 	});
 	
-	// $routeProvider.when('/addnew', {
-	// 	templateUrl: 'partials/add-new.html'
-	//  controller: 'ListController'
-	// });
+	$routeProvider.when('/addnew', {
+		templateUrl: 'partials/add-new.html',
+	 controller: 'ListController'
+	});
 
 	$routeProvider.otherwise({
 		redirectTo: '/list'
