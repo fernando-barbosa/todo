@@ -1,4 +1,4 @@
 angular.module('todo')
-.controller('ListController', function($scope){
-	
+.controller('ListController', function($scope) {
+	$scope.item = [];
 });
