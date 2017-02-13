@@ -6,7 +6,7 @@ angular.module('todo', ['ngRoute'])
 		templateUrl: 'partials/list.html',
 		controller: 'ListController'
 	});
-	
+
 	$routeProvider.when('/addnew', {
 		templateUrl: 'partials/add-new.html',
 	 	controller: 'AddController'

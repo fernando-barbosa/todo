@@ -1,0 +1,15 @@
+{
+  "lang": "pt-br",
+  "orientation": "portrait",
+  "background_color": "#008000",
+  "name": "Credenciamento Stone",
+  "short_name": "Credenciamento",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "images/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ]
+}
