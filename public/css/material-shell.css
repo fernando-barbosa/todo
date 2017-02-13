@@ -54,7 +54,7 @@ body {
       -ms-flex-align: stretch;
           align-items: stretch;
   -webkit-align-content: stretch;
-      -ms-flex-line-pack: stretch;
+      -ms-flex-line-pack: stretch
           align-content: stretch;
   background: #ececec; }
 
