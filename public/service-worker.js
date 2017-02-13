@@ -1,3 +1,4 @@
+var dataCacheName = 'todo-dataCache-v1';
 var cacheName = 'todo-cache-v1';
 var filesToCache = [
 	'/', 
@@ -5,10 +6,10 @@ var filesToCache = [
 	'css/material-shell.css', 
 	'css/materialize.css', 
 	'js/app.js', 
-	'js/materialize.js', 
-	'js/angular.js', 
-	'js/angular-route.js', 
-	'js/angular-resource.js', 
+	'js/scripts/materialize.js', 
+	'js/scripts/angular.js', 
+	'js/scripts/angular-route.js', 
+	'js/scripts/angular-resource.js', 
 	'js/controllers/list-controller.js', 
 	'js/controllers/add-new-controller.js', 
 ];
@@ -47,10 +48,22 @@ self.addEventListener('activate', function(e) {
 });
 
 self.addEventListener('fetch', function(e) {
-  console.log('[ServiceWorker] Fetch', e.request.url);
-  e.respondWith(
-    caches.match(e.request).then(function(response) {
-      return response || fetch(e.request);
-    })
-  );
+  console.log('[Service Worker] Fetch', e.request.url);
+  var dataUrl = '';
+  if (e.request.url.indexOf(dataUrl) > -1) {
+    e.respondWith(
+      caches.open(dataCacheName).then(function(cache) {
+        return fetch(e.request).then(function(response){
+          cache.put(e.request.url, response.clone());
+          return response;
+        });
+      })
+    );
+  } else {
+    e.respondWith(
+      caches.match(e.request).then(function(response) {
+        return response || fetch(e.request);
+      })
+    );
+  }
 });
