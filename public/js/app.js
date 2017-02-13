@@ -1,5 +1,7 @@
 angular.module('todo', ['ngRoute'])
 .config(function($routeProvider, $locationProvider) {
+	$locationProvider.hashPrefix('');
+
 	$routeProvider.when('/list', {
 		templateUrl: 'partials/list.html',
 		controller: 'ListController'
@@ -7,7 +9,7 @@ angular.module('todo', ['ngRoute'])
 	
 	$routeProvider.when('/addnew', {
 		templateUrl: 'partials/add-new.html',
-	 controller: 'ListController'
+	 	controller: 'AddController'
 	});
 
 	$routeProvider.otherwise({
