@@ -9,25 +9,4 @@
 	<div align="right">
 		<a class="waves-effect waves-light light-green darken-4 btn" type="button" href="/#/addnew"><i class="material-icons left">add</i>Adicionar</a>
 	</div>
-
-	<div ng-controller="DbController">
-		<table>
-			<tr>
-				<th>Emp ID</th>
-				<th>Employee Name</th>
-				<th>Email Address</th>
-				<th>Gender</th>
-				<th>Address</th>
-				<th></th>
-				<th></th>
-			</tr>
-			<tr ng-repeat="detail in details| filter:search_query">
-				<td> <span>{{detail.emp_id}}</span></td>
-				<td>{{detail.emp_name}}</td>
-				<td>{{detail.emp_email}}</td>
-				<td>{{detail.emp_gender}}</td>
-				<td>{{detail.emp_address}}</td>
-			</tr>
-		</table>
-	</div>
 </div>
