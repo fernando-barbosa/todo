@@ -11,6 +11,7 @@ angular.module('todo')
 		});
 		$scope.todoText = ''; //clear the input after adding
 		localStorage.setItem('todos', JSON.stringify($scope.todos));
+		window.location = '#/list';
 	};
 
 	$scope.remaining = function() {
