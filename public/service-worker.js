@@ -8,12 +8,11 @@ var filesToCache = [
 	'css/material-shell.css', 
 	'css/materialize.css', 
 	'js/app.js', 
+  'js/controllers/todo-controller.js', 
 	'js/scripts/materialize.js', 
 	'js/scripts/angular.js', 
 	'js/scripts/angular-route.js', 
-	'js/scripts/angular-resource.js', 
-	'js/controllers/list-controller.js', 
-	'js/controllers/add-new-controller.js', 
+	'js/scripts/angular-resource.js'
 ];
 
 if('serviceWorker' in navigator) {

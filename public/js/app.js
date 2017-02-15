@@ -1,4 +1,4 @@
-angular.module('todo', ['ngRoute', 'generalServices'])
+angular.module('todo', ['ngRoute'])
 .config(function($routeProvider, $locationProvider) {
 	$locationProvider.hashPrefix('');
 

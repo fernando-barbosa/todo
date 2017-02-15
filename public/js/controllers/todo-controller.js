@@ -7,9 +7,11 @@ angular.module('todo')
 	$scope.addTodo = function() {
 		$scope.todos.push({
 			text: $scope.todoText,
+			content: $scope.todoContent,
 			done: false
 		});
 		$scope.todoText = ''; //clear the input after adding
+		$scope.todoContent = ''; //clear the input after adding
 		localStorage.setItem('todos', JSON.stringify($scope.todos));
 		window.location = '#/list';
 	};
