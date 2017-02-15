@@ -1,11 +1,3 @@
 <!-- <input type="checkbox" id="checkbox-delete-todo-item" />
 <label for="checkbox-delete-todo-item" class="card-title">{{title}}</label> -->
 
-<ul>
-	<li ng-repeat="todo in todos track by $index">
-		<input type="checkbox" ng-model="todo.done">
-		<span class="done-{{ todo.done }}">{{ todo.text }}</span>
-	</li>
-</ul>
-
-<p>[ <a href="" ng-click="archive()">Remove Completed Items</a> ]</p>

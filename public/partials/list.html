@@ -2,10 +2,16 @@
 	<span>{{ remaining() }} of {{ todos.length }} remaining</span>
 </div>
 
-<div class="card grey lighten-4">
-	<info-panel></info-panel>
+<div class="card grey lighten-4" ng-repeat="todo in todos track by $index">
+	<ul>
+		<li>
+			<input type="checkbox" ng-model="todo.done">
+			<span class="done-{{ todo.done }}">{{ todo.text }}</span>
+		</li>
+	</ul>
 </div>
 
-<div align="right">
-	<a class="waves-effect waves-light light-green darken-4 btn" type="button" href="/#/addnew"><i class="material-icons left">add</i>Adicionar</a>
+<div class="col m12" align="center">
+	<a class="waves-effect waves-light light-green darken-4 btn" type="button" href="/#/addnew">Novo</a>
+	<a class="waves-effect waves-light red darken-2 btn" type="button" href="" ng-click="archive()">Limpar</a>
 </div>

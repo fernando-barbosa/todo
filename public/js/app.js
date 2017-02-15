@@ -4,12 +4,12 @@ angular.module('todo', ['ngRoute', 'directives', 'generalServices'])
 
 	$routeProvider.when('/list', {
 		templateUrl: 'partials/list.html',
-		controller: 'ListController'
+		controller: 'todoController'
 	});
 
 	$routeProvider.when('/addnew', {
 		templateUrl: 'partials/add-new.html',
-	 	controller: 'AddController'
+	 	controller: 'todoController'
 	});
 
 	$routeProvider.otherwise({

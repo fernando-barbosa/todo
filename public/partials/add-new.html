@@ -1,18 +1,16 @@
-<form action="" method="post" ng-submit="addTodo()" class="todo-form">
+<form data-ng-submit="addTodo()">
 	<div class="input-field col s12">
   		<input id="item_title" type="text" ng-model="todoText" class="validate">
   		<label for="item_title">Título</label>
 	</div>
 
-	<div class="input-field col s12">
+<!-- 	<div class="input-field col s12">
       <textarea id="textarea" class="materialize-textarea" rows="50"></textarea>
       <label for="textarea">Conteúdo</label>
-    </div>
+    </div> -->
 
-    <div class="row right">
-        <div class="col s12">
-			<button class="waves-effect light-green darken-4 btn" type="reset" value="Reset"> Limpar </button>
-			<button class="waves-effect light-green darken-4 btn" type="submit" value="submit"> Adicionar </button>
+    <div class="right">
+			<button class="waves-effect light-green darken-4 btn" type="submit" value="submit" href="/#/list"> Adicionar </button>
 		</div>
 	</div>
 </form>
