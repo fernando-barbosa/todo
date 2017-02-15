@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" ng-app="todo">
+<html lang="pt-br" ng-app="todo" data-framework="firebase">
 <head>
 	<base href="/">
 	<meta charset="UTF-8">
@@ -27,10 +27,25 @@
 	</main>
 
 	<!-- JS  imports -->
+	<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-database.js"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
+		    apiKey: "AIzaSyA4qsHaA0K3i6xe2L64_MOpnUoAcL_jrCc",
+		    authDomain: "todo-cbb8c.firebaseapp.com",
+		    databaseURL: "https://todo-cbb8c.firebaseio.com",
+		    storageBucket: "todo-cbb8c.appspot.com",
+			messagingSenderId: "959119166709"
+		};
+		firebase.initializeApp(config);
+	</script>
 	<script type="text/javascript" src="/service-worker.js"></script>
 	<script type="text/javascript" src="js/scripts/jquery-3.1.1.js"></script>
 	<script type="text/javascript" src="js/scripts/materialize.min.js"></script>
 	<script type="text/javascript" src="js/scripts/angular.js"></script>
+	<script type="text/javascript" src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
 	<script type="text/javascript" src="js/scripts/angular-route.js"></script>
 	<script type="text/javascript" src="js/scripts/angular-resource.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>

@@ -1,4 +1,4 @@
-angular.module('todo', ['ngRoute'])
+angular.module('todo', ['ngRoute', 'firebase'])
 .config(function($routeProvider, $locationProvider) {
 	$locationProvider.hashPrefix('');
 
