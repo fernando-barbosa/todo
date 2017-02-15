@@ -3,8 +3,8 @@
 </div>
 
 <div class="card grey lighten-4" ng-repeat="todo in todos track by $index">
-	<input type="checkbox" class="filled-in" ng-model="todo.done" id="done-{{ todo.done }}">
-	<label for="done-{{ todo.done }}" class="done-{{ todo.done }}">{{ todo.text }}</label>
+	<input type="checkbox" class="filled-in" ng-model="todo.done" id="item-{{todo}}">
+	<label for="item-{{todo}}" class="done-{{ todo.done }}">{{ todo.text }}</label>
 </div>
 
 <div class="col m12" align="center">
