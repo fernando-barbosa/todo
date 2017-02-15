@@ -1,12 +1,31 @@
-<div class="row">
-	<div class="col s12">
-        <div class="card grey lighten-4">
-    		<info-panel>
-            
-            </info-panel>
-        </div>
-    </div>
-	<div align="right">
-		<a class="waves-effect waves-light light-green darken-4 btn" type="button" href="/#/addnew"><i class="material-icons left">add</i>Adicionar</a>
-	</div>
+<div>
+	<span>{{ remaining() }} of {{ todos.length }} remaining</span>
+</div>
+
+<div class="card grey lighten-4">
+	<info-panel></info-panel>
+</div>
+
+<div align="right">
+	<a class="waves-effect waves-light light-green darken-4 btn" type="button" href="/#/addnew"><i class="material-icons left">add</i>Adicionar</a>
+</div>
+
+<div>
+	<section class="archive-control">
+		
+		
+	</section>
+
+	<ul>
+		<li ng-repeat="todo in todos track by $index">
+			<input type="checkbox" ng-model="todo.done">
+			<span class="done-{{ todo.done }}">{{ todo.text }}</span>
+		</li>
+	</ul>
+
+	<form ng-submit="addTodo()" class="todo-form">
+		<input type="text" ng-model="todoText" placeholder="Enter new ToDo item" />
+		<br />
+		<input type="submit" value="Add Task" />
+	</form>
 </div>

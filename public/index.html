@@ -12,6 +12,22 @@
 	<!-- CSS imports -->
 	<link rel="stylesheet" type="text/css" href="css/material-shell.css">
 	<link rel="stylesheet" type="text/css" href="css/materialize.css">
+</head>
+<body>
+	<header class="header">
+    	<h1 class="header__title">TODO List</h1>
+  	</header>
+
+  	<main class="main">
+  		<div class="container" ng-controller="todoController">
+  			<div class="row">
+				<div class="col s12">
+					<ng-view></ng-view>
+				</div>
+			</div>
+		</div>
+	</main>
+
 	<!-- JS  imports -->
 	<script type="text/javascript" src="/service-worker.js"></script>
 	<script type="text/javascript" src="js/scripts/jquery-3.1.1.js"></script>
@@ -22,17 +38,8 @@
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript" src="js/controllers/list-controller.js"></script>
 	<script type="text/javascript" src="js/controllers/add-new-controller.js"></script>
+	<script type="text/javascript" src="js/controllers/todo-controller.js"></script>
 	<script type="text/javascript" src="js/directives/directives.js"></script>
 	<script type="text/javascript" src="js/services/general-services.js"></script>
-</head>
-<body>
-	<header class="header">
-    	<h1 class="header__title">TODO List</h1>
-  	</header>
-  	<main class="main">
-  		<div class="container">
-			<ng-view></ng-view>
-		</div>
-	</main>
 </body>
 </html>
