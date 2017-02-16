@@ -1,6 +1,6 @@
 {
-  "name": "Credenciamento Stone",
-  "short_name": "Credenciamento",
+  "name": "Lista de Tarefas",
+  "short_name": "Tarefas",
   "icons": [{
     "src": "images/icons/icon-128x128.png",
       "sizes": "128x128",

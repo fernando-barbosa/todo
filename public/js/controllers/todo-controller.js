@@ -19,14 +19,14 @@ angular.module('todo')
 		$scope.todoContent = ''; //clear the input after adding
 		localStorage.setItem('todos', JSON.stringify($scope.todos));
 
-		// push to firebase
-		$scope.todos.$add({
-			text: $scope.todoText,
-			content: $scope.todoContent,
-			completed: false
-		});
+		// // push to firebase
+		// $scope.todos.$add({
+		// 	text: $scope.todoText,
+		// 	content: $scope.todoContent,
+		// 	completed: false
+		// });
 
-		console.log("Funcionou!");
+		// console.log("Funcionou!");
 
 		window.location = '#/list';
 	};
