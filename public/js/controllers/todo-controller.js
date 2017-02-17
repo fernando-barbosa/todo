@@ -3,8 +3,8 @@ angular.module('todo')
 
 	// Firebase
 	var storage = firebase.database();
-	var storageRef = storage.ref();
-	
+	var storageRef = storage.ref('todo');
+
 	var uploadObjects = document.getElementById('uploadObjects');
 	var objectTitle = document.getElementById('item_title');
 	var objectContent = document.getElementById('item_content');
@@ -16,11 +16,25 @@ angular.module('todo')
 		}
 
 		var list = $firebaseArray(storageRef);
-			list.$add({ todo: objects }).then(function(ref) {
-			console.log("Adicionado ao banco com sucesso!");
+		list.$add(objects).then(function(ref) {
 			console.log('Title: ', objectTitle.value);
 			console.log('Content: ', objectContent.value);
+
+		  	var id = objects.$ref().key();
+		  	console.log("added record with id " + id);
+		  	list.$ref(id);
+
+			console.log("Adicionado ao banco com sucesso!");
 		});
+	}
+
+	$scope.removeFirebase = function() {
+		// var list = $firebaseArray(storageRef);
+		// var item = list[2];
+		// list.$remove(item).then(function(ref) {
+		//   ref.key === item.$id; // true
+		// });
+		console.log('mensagem delete');
 	}
 
 	// Local Storage
