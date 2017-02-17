@@ -1,0 +1,20 @@
+<div ng-controller="loginController">
+	<div class="align-div-center">
+		<div class="card">
+			<h5 align="center" class="green-text text-darken-2">Recuperar senha</h5>
+			<h6 align="center" class="green-text text-darken-2">Digite o email cadastrado.</h6>
+			<form data-ng-submit="doLogin()">
+				<div class="input-field">
+					<input id="email" type="email" class="validate" ng-model="forgetEmail">
+					<label for="email">Email</label>
+				</div>
+				<p> </p>
+				<a class="btn-floating halfway-fab btn-large waves-effect waves-dark green" ng-click=""><i class="material-icons">email</i></a>
+			</form>
+		</div>
+	</div>
+
+	<div class="align-div-bottom col s12">
+		<a class="green-text text-darken-2" ng-click="goToLogin()">Voltar</a>
+	</div>
+</div>

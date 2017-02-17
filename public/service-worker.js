@@ -5,6 +5,7 @@ var filesToCache = [
 	'/index.html', 
   '/manifest.json', 
   '/partials/login.html', 
+  '/partials/login-forget-pass.html', 
   '/partials/list.html', 
   '/partials/add-new.html', 
   'service-worker.js', 

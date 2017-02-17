@@ -1,6 +1,6 @@
 angular.module('todo')
 .controller('loginController', function($scope) {
-	var email = 'devmobile@stone.com.br';
+	var email = 'login@email.com.br';
 	var password = '12345';
 
 	$scope.doLogin = function() {
@@ -10,4 +10,12 @@ angular.module('todo')
 			Materialize.toast('Login incorreto.', 4000);
 		}
 	};
+
+	$scope.goToForget = function() {
+		window.location = '#/login-forget-pass';
+	}
+
+	$scope.goToLogin = function() {
+		window.location = '#/login';
+	}
 });

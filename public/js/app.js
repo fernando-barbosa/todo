@@ -7,6 +7,11 @@ angular.module('todo', ['ngRoute', 'firebase'])
 		controller: 'loginController'
 	});
 
+	$routeProvider.when('/login-forget-pass', {
+		templateUrl: 'partials/login-forget-pass.html',
+		controller: 'loginController'
+	});
+
 	$routeProvider.when('/list', {
 		templateUrl: 'partials/list.html',
 		controller: 'todoController'
