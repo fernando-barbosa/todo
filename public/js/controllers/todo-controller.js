@@ -1,11 +1,31 @@
 angular.module('todo')
-.controller('todoController', function($scope, $firebase) {
-	
-	//var fireRef = new Firebase('https://todo-cbb8c.firebaseio.com');
+.controller('todoController', function($scope, $firebaseObject, $firebaseArray, $firebase) {
 
+	// Firebase
+	var storage = firebase.database();
+	var storageRef = storage.ref();
+	
+	var uploadObjects = document.getElementById('uploadObjects');
+	var objectTitle = document.getElementById('item_title');
+	var objectContent = document.getElementById('item_content');
+
+	$scope.addFirebase = function() {
+		var objects = {
+			title: objectTitle.value,
+			content: objectContent.value
+		}
+
+		var list = $firebaseArray(storageRef);
+			list.$add({ todo: objects }).then(function(ref) {
+			console.log("Adicionado ao banco com sucesso!");
+			console.log('Title: ', objectTitle.value);
+			console.log('Content: ', objectContent.value);
+		});
+	}
+
+	// Local Storage
 	$scope.saved = localStorage.getItem('todos');
 	$scope.todos = (localStorage.getItem('todos')!==null) ? JSON.parse($scope.saved) : [  ];
-	// $scope.todos = $firebase(fireRef).$asArray();
 	localStorage.setItem('todos', JSON.stringify($scope.todos))
 
 	$scope.addTodo = function() {
@@ -19,14 +39,7 @@ angular.module('todo')
 		$scope.todoContent = ''; //clear the input after adding
 		localStorage.setItem('todos', JSON.stringify($scope.todos));
 
-		// push to firebase
-		$scope.todos.$add({
-			text: $scope.todoText,
-			content: $scope.todoContent,
-			completed: false
-		});
-
-		console.log("Funcionou!");
+		console.log("Adicionado ao localStorage com sucesso!");
 
 		window.location = '#/list';
 	};
