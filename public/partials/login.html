@@ -1,0 +1,21 @@
+<div ng-controller="loginController" class="align-div-center">
+	<div class="card">
+		<h5 align="center" class="green-text text-darken-2">Seja bem vindo!</h5>
+		<form data-ng-submit="doLogin()">
+			<div class="input-field">
+				<input id="email" type="email" class="validate" ng-model="emailLogin">
+				<label for="email">Email</label>
+			</div>
+			<div class="input-field">
+				<input id="password" type="password" class="validate" ng-model="passwordLogin">
+				<label for="password">Senha</label>
+			</div>
+			<p> </p>
+			<a class="btn-floating halfway-fab btn-large waves-effect waves-dark green" ng-click="doLogin()"><i class="material-icons">done</i></a>
+		</form>
+	</div>
+</div>
+
+<div class="align-div-bottom col s12">
+	<a class="green-text text-darken-2" onclick="Materialize.toast('Função não disponível.', 4000)">Esqueceu a senha?</a>
+</div>

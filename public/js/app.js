@@ -2,6 +2,11 @@ angular.module('todo', ['ngRoute', 'firebase'])
 .config(function($routeProvider, $locationProvider) {
 	$locationProvider.hashPrefix('');
 
+	$routeProvider.when('/login', {
+		templateUrl: 'partials/login.html',
+		controller: 'loginController'
+	});
+
 	$routeProvider.when('/list', {
 		templateUrl: 'partials/list.html',
 		controller: 'todoController'
@@ -13,7 +18,7 @@ angular.module('todo', ['ngRoute', 'firebase'])
 	});
 
 	$routeProvider.otherwise({
-		redirectTo: '/list'
+		redirectTo: '/login'
 	});
 
 	var config = {
