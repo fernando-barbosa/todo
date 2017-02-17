@@ -9,6 +9,19 @@ angular.module('todo')
 	var objectTitle = document.getElementById('item_title');
 	var objectContent = document.getElementById('item_content');
 
+	$scope.getFirebaseJSON = function() {
+		storageRef.on('value', snap => {
+			console.log('Retornando dados do Firebase: ');
+
+			// console.log(JSON.stringify(snap.val()));
+
+			var data = snap.val();
+			var jstring = JSON.stringify(data);
+			console.log(jstring);
+
+		});
+	}
+
 	$scope.addFirebase = function() {
 		var objects = {
 			title: objectTitle.value,
@@ -16,25 +29,23 @@ angular.module('todo')
 		}
 
 		var list = $firebaseArray(storageRef);
-		list.$add(objects).then(function(ref) {
-			console.log('Title: ', objectTitle.value);
-			console.log('Content: ', objectContent.value);
-
-		  	var id = objects.$ref().key();
-		  	console.log("added record with id " + id);
-		  	list.$ref(id);
-
-			console.log("Adicionado ao banco com sucesso!");
+		list.$add(objects).then(function(uid) {
+		  	console.log('Id do item: ' + uid);
+			console.log('Adicionado ao banco com sucesso!');
 		});
+
+		$scope.getFirebaseJSON();
 	}
 
 	$scope.removeFirebase = function() {
+		var list = $firebaseObject(storageRef);
 		// var list = $firebaseArray(storageRef);
-		// var item = list[2];
-		// list.$remove(item).then(function(ref) {
-		//   ref.key === item.$id; // true
-		// });
-		console.log('mensagem delete');
+
+		list.$remove().then(function(){
+			console.log('Removido com sucesso!');
+		}, function(error){
+			console.log('erro: ' + error);
+		});
 	}
 
 	// Local Storage
@@ -53,7 +64,7 @@ angular.module('todo')
 		$scope.todoContent = ''; //clear the input after adding
 		localStorage.setItem('todos', JSON.stringify($scope.todos));
 
-		console.log("Adicionado ao localStorage com sucesso!");
+		console.log('Adicionado ao local storage com sucesso!');
 
 		window.location = '#/list';
 	};
@@ -75,4 +86,5 @@ angular.module('todo')
 		});
 		localStorage.setItem('todos', JSON.stringify($scope.todos));
 	};
+
 });
