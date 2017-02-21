@@ -1,5 +1,5 @@
-<div  ng-controller="todoController">
-	<form data-ng-submit="addTodo()">
+<div  ng-controller="localStorageController">
+	<form>
 		<div class="input-field col s12">
 	  		<input id="item_title" type="text" ng-model="todoText" class="validate">
 	  		<label for="item_title">Título</label>
@@ -11,7 +11,7 @@
 	    </div>
 
 	    <div class="right">
-			<button id="uploadObjects" ng-click="addFirebase()" class="waves-effect light-green darken-4 btn" type="submit" value="submit" href="/#/list"> Adicionar </button>
+			<button id="uploadObjects" ng-click="addTodo()" class="waves-effect light-green darken-4 btn" type="submit" value="submit" href="/#/list"> Adicionar </button>
 		</div>
 	</form>
 </div>

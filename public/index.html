@@ -19,7 +19,7 @@
 	<link rel="manifest" href="/manifest.json">
 	<!-- Material Icons Font -->
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<!-- CSS imports -->
+	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="css/material-shell.css">
 	<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
 </head>
@@ -36,19 +36,33 @@
 		</div>
 	</main>
 
-	<!-- JS  imports -->
-	<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-database.js"></script>
-	<script type="text/javascript" src="/service-worker.js"></script>
-	<script type="text/javascript" src="js/scripts/jquery-3.1.1.js"></script>
-	<script type="text/javascript" src="js/scripts/materialize.min.js"></script>
+	<!-- JS FIREBASE -->
+	<script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.6.9/firebase-app.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.6.9/firebase-database.js"></script>
+	<!-- JS ANGULAR -->
 	<script type="text/javascript" src="js/scripts/angular.js"></script>
-	<script type="text/javascript" src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
 	<script type="text/javascript" src="js/scripts/angular-route.js"></script>
 	<script type="text/javascript" src="js/scripts/angular-resource.js"></script>
+	<!-- JS ANGULARFIRE -->
+	<script type="text/javascript" src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+	<!-- JS ASSETS -->
+	<script type="text/javascript" src="js/scripts/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="js/scripts/materialize.min.js"></script>
+	<!-- JS SERVICE WORK -->
+	<script type="text/javascript" src="/service-worker.js"></script>
+	<!-- JS MODULES -->
 	<script type="text/javascript" src="js/app.js"></script>
-	<script type="text/javascript" src="js/controllers/todo-controller.js"></script>
-	<script type="text/javascript" src="js/controllers/login-controller.js"></script>
+	<script type="text/javascript" src="js/modules/app.config.js"></script>
+	<script type="text/javascript" src="js/modules/app.routes.js"></script>
+	<script type="text/javascript" src="js/modules/app.core.js"></script>
+	<script type="text/javascript" src="js/modules/app.services.js"></script>
+	<!-- JS SERVICES -->
+	<script type="text/javascript" src="js/services/firebase.fct.js"></script>
+	<script type="text/javascript" src="js/services/localstorage.fct.js"></script>
+	<!-- JS CONTROLLERS -->
+	<script type="text/javascript" src="js/controllers/localstorage.ctrl.js"></script>
+	<script type="text/javascript" src="js/controllers/firebase.ctrl.js"></script>
+	<script type="text/javascript" src="js/controllers/login.ctrl.js"></script>
 </body>
 </html>
