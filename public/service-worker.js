@@ -10,7 +10,7 @@ var filesToCache = [
   '/partials/add-new.html',
   'service-worker.js',
 	'css/material-shell.css',
-	'css/materialize.min.css',
+	'assets/css/materialize.min.css',
   'js/app.js',
   'js/modules/app.config.js',
   'js/modules/app.core.js',
@@ -19,11 +19,11 @@ var filesToCache = [
   'js/controllers/localstorage.ctrl.js',
   'js/controllers/firebase.ctrl.js',
   'js/controllers/login.ctrl.js',
-	'js/scripts/materialize.min.js',
-	'js/scripts/angular.js',
-	'js/scripts/angular-route.js',
-	'js/scripts/angular-resource.js',
-  'js/scripts/jquery-3.1.1.js'
+	'assets/js/materialize.min.js',
+	'assets/js/angular.js',
+	'assets/js/angular-route.js',
+	'assets/js/angular-resource.js',
+  'assets/js/jquery-3.1.1.js'
 ];
 
 if('serviceWorker' in navigator) {

@@ -4,7 +4,6 @@ angular
 	.module('app.config')
 	.controller('FirebaseController', function($scope, $firebaseObject, $firebaseArray, $firebase) {
 
-		// Firebase
 		var storage = firebase.database();
 		var storageRef = storage.ref();
 

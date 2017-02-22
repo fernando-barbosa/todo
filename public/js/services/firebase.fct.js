@@ -4,7 +4,7 @@ angular
 	.module('app.config')
 	.factory('FirebaseServices', dataFirebaseService);
 
- function dataFirebaseService($firebaseObject, $firebaseArray, $firebase) {
+function dataFirebaseService($firebaseObject, $firebaseArray, $firebase) {
 
 	var storage = firebase.database();
 	var storageRef = storage.ref();
@@ -29,22 +29,14 @@ angular
 	};
 
 	$scope.removeFirebase = function() {
-		var obj = $firebaseObject(storageRef);
+		var list = $firebaseObject(storageRef);
+		// var list = $firebaseArray(storageRef);
 
-		obj.$remove().then(function() {
-
+		list.$remove().then(function(){
+			console.log('Removido com sucesso!');
+		}, function(error){
+			console.log('erro: ' + error);
 		});
-	};
-
-	// $scope.removeFirebase = function() {
-	// 	var list = $firebaseObject(storageRef);
-	// 	// var list = $firebaseArray(storageRef);
-
-	// 	list.$remove().then(function(){
-	// 		console.log('Removido com sucesso!');
-	// 	}, function(error){
-	// 		console.log('erro: ' + error);
-	// 	});
-	// }
+	}
 
 }
