@@ -2,24 +2,34 @@ var dataCacheName = 'todo-dataCache-v1';
 var cacheName = 'todo-cache-v1';
 var filesToCache = [
 	'/',
+  // HTML
 	'/index.html',
   '/manifest.json',
   '/partials/login.html',
   '/partials/login-forget-pass.html',
   '/partials/list.html',
   '/partials/add-new.html',
+  // SERICE WORKS
   'service-worker.js',
+  // CSS
 	'css/material-shell.css',
+  // CSS ASSETS
 	'assets/css/materialize.min.css',
+  // MODULES
   'js/app.js',
   'js/modules/app.config.js',
   'js/modules/app.core.js',
   'js/modules/app.routes.js',
 	'js/modules/app.services.js',
+  // CONTROLLER
   'js/controllers/localstorage.ctrl.js',
-  'js/controllers/firebase.ctrl.js',
   'js/controllers/login.ctrl.js',
   'js/controllers/loginforget.ctrl.js',
+  'js/controllers/main.ctrl.js',
+  // FACTORY
+  'js/services/firebase.fct.js',
+  'js/services/localstorage.fct.js',
+  // JS ASSETS
 	'assets/js/materialize.min.js',
 	'assets/js/angular.js',
 	'assets/js/angular-route.js',
@@ -81,8 +91,8 @@ self.addEventListener('push', function(event) {
   const title = 'Lista de tarefas';
   const options = {
     body: 'Teste de notificação marretada.',
-    icon: 'images/icon.png',
-    badge: 'images/badge.png'
+    icon: 'assets/images/icon.png',
+    badge: 'assets/images/badge.png'
   };
 
   event.waitUntil(self.registration.showNotification(title, options));

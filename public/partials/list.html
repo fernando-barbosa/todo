@@ -1,5 +1,5 @@
-<div ng-controller="LocalStorageController">
-	<div  ng-controller="FirebaseController">
+<div ng-controller="MainController">
+	<div  ng-controller="LocalStorageController">
 		<div class="card grey lighten-4" ng-repeat="todo in todos track by $index">
 			<input type="checkbox" class="filled-in" ng-model="todo.done" id="item-{{todo}}">
 			<label for="item-{{todo}}" class="done-{{ todo.done }}">{{ todo.text }}</label>
