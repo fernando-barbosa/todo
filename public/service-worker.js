@@ -19,6 +19,7 @@ var filesToCache = [
   'js/controllers/localstorage.ctrl.js',
   'js/controllers/firebase.ctrl.js',
   'js/controllers/login.ctrl.js',
+  'js/controllers/loginforget.ctrl.js',
 	'assets/js/materialize.min.js',
 	'assets/js/angular.js',
 	'assets/js/angular-route.js',
