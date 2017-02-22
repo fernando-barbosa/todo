@@ -26,12 +26,17 @@ var filesToCache = [
   'assets/js/jquery-3.1.1.js'
 ];
 
-if('serviceWorker' in navigator) {
-  navigator.serviceWorker
-  	.register('/service-worker.js')
+if('serviceWorker' in navigator && 'PushManager' in window) {
+  navigator.serviceWorker.register('/service-worker.js')
 	.then(function() {
 		console.log("Service Worker Registered"); 
-	});
+	})
+  .catch(function(error) {
+    console.error('Service Worker Error', error);
+  });
+} else {
+  console.warn('Push messaging is not supported');
+  // pushButton.textContent = 'Push Not Supported';
 }
 
 self.addEventListener('install', function(e) {
@@ -65,5 +70,29 @@ self.addEventListener('fetch', function(e) {
     caches.match(e.request).then(function(response) {
       return response || fetch(e.request);
     })
+  );
+});
+
+self.addEventListener('push', function(event) {
+  console.log('[Service Worker] Push Received.');
+  console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
+
+  const title = 'Lista de tarefas';
+  const options = {
+    body: 'Teste de notificação marretada.',
+    icon: 'images/icon.png',
+    badge: 'images/badge.png'
+  };
+
+  event.waitUntil(self.registration.showNotification(title, options));
+});
+
+self.addEventListener('notificationclick', function(event) {
+  console.log('[Service Worker] Notification click Received.');
+
+  event.notification.close();
+
+  event.waitUntil(
+    clients.openWindow('https://www.stone.com.br')
   );
 });

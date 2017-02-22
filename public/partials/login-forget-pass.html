@@ -1,4 +1,4 @@
-<div ng-controller="loginController">
+<div ng-controller="loginForgetController">
 	<div class="align-div-center">
 		<div class="card">
 			<h5 align="center" class="green-text text-darken-2">Recuperar senha</h5>
@@ -8,8 +8,9 @@
 					<input id="email" type="email" class="validate" ng-model="forgetEmail">
 					<label for="email">Email</label>
 				</div>
-				<p> </p>
-				<a class="btn-floating halfway-fab btn-large waves-effect waves-dark green" ng-click=""><i class="material-icons">email</i></a>
+				<button ng-click="initialiseUI()" class="waves-effect light-green darken-4 btn">
+        			Enviar notificação
+      			</button>
 			</form>
 		</div>
 	</div>

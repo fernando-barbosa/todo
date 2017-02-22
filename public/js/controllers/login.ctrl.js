@@ -18,4 +18,6 @@ angular.module('todo')
 	$scope.goToLogin = function() {
 		window.location = '#/login';
 	}
+
+	
 });
