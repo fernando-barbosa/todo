@@ -19,12 +19,12 @@ function config($routeProvider, $locationProvider) {
 
 	$routeProvider.when('/list', {
 		templateUrl: 'partials/list.html',
-		controller: 'localStorageController'
+		controller: 'LocalStorageController'
 	});
 
 	$routeProvider.when('/addnew', {
 		templateUrl: 'partials/add-new.html',
-	 	controller: 'localStorageController'
+	 	controller: 'LocalStorageController'
 	});
 
 	$routeProvider.otherwise({

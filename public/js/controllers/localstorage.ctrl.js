@@ -2,8 +2,7 @@
 
 angular
 	.module('app.core')
-	.controller('localStorageController', function($scope) {
- 		// var todoLocalStorageID;
+	.controller('LocalStorageController', function($scope) {
 
 		$scope.saved = localStorage.getItem('todos');
 		$scope.todos = (localStorage.getItem('todos')!==null) ? JSON.parse($scope.saved) : [  ];
@@ -40,8 +39,10 @@ angular
 			angular.forEach(oldTodos, function(todo){
 				if (!todo.done)
 					$scope.todos.push(todo);
+				console.log('Removido do local storage com sucesso!');
 			});
 
 			localStorage.setItem('todos', JSON.stringify($scope.todos));
 		};
+
 	});

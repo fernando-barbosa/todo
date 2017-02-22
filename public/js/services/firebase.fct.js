@@ -4,7 +4,7 @@ angular
 	.module('app.config')
 	.factory('FirebaseServices', dataFirebaseService);
 
- function dataFirebaseService($scope, $firebaseObject, $firebaseArray, $firebase) {
+ function dataFirebaseService($firebaseObject, $firebaseArray, $firebase) {
 
 	var storage = firebase.database();
 	var storageRef = storage.ref();
@@ -25,8 +25,6 @@ angular
 	 		todoFirebaseID = storageRef.key;
 
 	 		console.log('Adicionado ao Firebase com sucesso!');
-
-			// $scope.addTodo();
 		});
 	};
 
@@ -36,10 +34,17 @@ angular
 		obj.$remove().then(function() {
 
 		});
-
-		$scope.archive();
 	};
 
-	return todoFirebaseID;
+	// $scope.removeFirebase = function() {
+	// 	var list = $firebaseObject(storageRef);
+	// 	// var list = $firebaseArray(storageRef);
+
+	// 	list.$remove().then(function(){
+	// 		console.log('Removido com sucesso!');
+	// 	}, function(error){
+	// 		console.log('erro: ' + error);
+	// 	});
+	// }
 
 }
