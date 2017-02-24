@@ -1,0 +1,22 @@
+<div ng-controller="MainController">
+	<form>
+		<div data-ng-init="updateDataLocalStorage()">
+			<div class="input-field col s12">
+		  		<input id="item_title" type="text" class="validate" value="{{ title }}">
+		  		<label for="item_title" class="active">Título</label>
+			</div>
+
+			<div class="input-field col s12">
+		      <textarea id="item_content" type="text" class="materialize-textarea validate">{{ content }}</textarea>
+		      <label for="item_content" class="active">Descrição</label>
+		    </div>
+	    </div>
+
+	    <div class="col s12">
+		    <div class="right">
+				<button class="waves-effect light-green darken-4 btn" type="submit" value="submit" href="/#/list"> Salvar Offline </button>
+				<button ng-click="updateListLocalStorage(); addFirebase()" class="waves-effect light-green darken-4 btn" type="submit" value="submit" href="/#/list"> Enviar </button>
+			</div>
+		</div>
+	</form>
+</div>

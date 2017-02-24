@@ -1,15 +1,15 @@
 <div ng-controller="MainController">
-	<div  ng-controller="LocalStorageController">
-		<div class="card grey lighten-4" ng-repeat="todo in todos track by $index">
-			<input type="checkbox" class="filled-in" ng-model="todo.done" id="item-{{todo}}">
-			<label for="item-{{todo}}" class="done-{{ todo.done }}">{{ todo.text }}</label>
-			<p ng-model="todo.done">{{ todo.content }}</p>
-		</div>
+	<div id="items_on_card" class="card grey lighten-4" ng-repeat="todo in todos track by $index">
+		<input type="checkbox" class="filled-in" ng-model="todo.done" id="item-{{todo}}">
+		<label for="item-{{todo}}" class="done-{{ todo.done }}">{{ todo.text }}</label>
+		<a href="/#/editcard">
+			<p id="item-description" ng-model="todo.done" class="black-text darken-4">{{ todo.content }}</p>
+		</a>
+	</div>
 
-		<div align="right">
-			<span>{{ remaining() }} de {{ todos.length }} restante</span><br><br>
-			<a class="waves-effect waves-light light-green darken-4 btn" type="button" href="/#/addnew">Novo</a>
-			<a class="waves-effect waves-light red darken-2 btn" type="button" href="" ng-click="archive(); removeFirebase()">Limpar</a>
-		</div>
+	<div align="right">
+		<span>{{ remaining() }} de {{ todos.length }} restante</span><br><br>
+		<a class="waves-effect waves-light light-green darken-4 btn" type="button" href="/#/addnew">Novo</a>
+		<a class="waves-effect waves-light red darken-2 btn" type="button" ng-click="removeLocalStorage()">Excluir</a>
 	</div>
 </div>

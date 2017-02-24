@@ -22,13 +22,11 @@ var filesToCache = [
   'js/modules/app.routes.js',
 	'js/modules/app.services.js',
   // CONTROLLER
-  'js/controllers/localstorage.ctrl.js',
   'js/controllers/login.ctrl.js',
   'js/controllers/loginforget.ctrl.js',
   'js/controllers/main.ctrl.js',
   // FACTORY
-  'js/services/firebase.fct.js',
-  'js/services/localstorage.fct.js',
+  'js/services/firebase.srv.js',
   // JS ASSETS
 	'assets/js/materialize.min.js',
 	'assets/js/angular.js',

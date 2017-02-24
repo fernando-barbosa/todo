@@ -2,14 +2,12 @@
 
 angular
 	.module('app.config')
-	.factory('FirebaseServices', dataFirebaseService);
+	.service('FirebaseServices', dataFirebaseService);
 
 function dataFirebaseService($firebaseObject, $firebaseArray, $firebase) {
 
 	var storage = firebase.database();
 	var storageRef = storage.ref();
-
-	var todoFirebaseID;
 
 	function addFirebase() {
 		var objectTitle = document.getElementById('item_title');
@@ -22,20 +20,8 @@ function dataFirebaseService($firebaseObject, $firebaseArray, $firebase) {
 
 		var list = $firebaseArray(storageRef);
 		list.$add(objects).then(function(storageRef) {
-	 		todoFirebaseID = storageRef.key;
 	 		console.log('Adicionado ao Firebase com sucesso!');
-		}, function(error){
-			console.log('erro: ' + error);
-		});
-
-		return list;
-
-	}
-
-	function removeFirebase() {
-		var list = $firebaseObject(storageRef);
-		list.$remove().then(function(){
-			console.log('Removido do Firebase com sucesso!');
+			Materialize.toast('Adicionado ao banco de dados com sucesso!', 2000);
 		}, function(error){
 			console.log('erro: ' + error);
 		});
@@ -44,8 +30,6 @@ function dataFirebaseService($firebaseObject, $firebaseArray, $firebase) {
 	}
 
 	return {
-		addFirebase: addFirebase,
-		removeFirebase: removeFirebase
+		addFirebase: addFirebase
 	}
-
 }
