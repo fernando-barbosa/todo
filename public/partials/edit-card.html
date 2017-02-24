@@ -1,6 +1,6 @@
 <div ng-controller="MainController">
 	<form>
-		<div data-ng-init="updateDataLocalStorage()">
+		<div data-ng-init="prefillingDataLocalStorage()">
 			<div class="input-field col s12">
 		  		<input id="item_title" type="text" class="validate" value="{{ title }}">
 		  		<label for="item_title" class="active">Título</label>
@@ -14,8 +14,8 @@
 
 	    <div class="col s12">
 		    <div class="right">
-				<button class="waves-effect light-green darken-4 btn" type="submit" value="submit" href="/#/list"> Salvar Offline </button>
-				<button ng-click="updateListLocalStorage(); addFirebase()" class="waves-effect light-green darken-4 btn" type="submit" value="submit" href="/#/list"> Enviar </button>
+				<button ng-click="updateListLocalStorage()" class="waves-effect light-green darken-4 btn" type="submit" value="submit"> Atualizar dados </button>
+				<button ng-click="addFirebase()" class="waves-effect light-green darken-4 btn" type="submit" value="submit" href="/#/list"> Enviar </button>
 			</div>
 		</div>
 	</form>
